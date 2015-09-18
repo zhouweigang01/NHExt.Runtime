@@ -1,0 +1,30 @@
+﻿	List<NHExt.Runtime.AOP.IAgentAspect> aspectList = NHExt.Runtime.AOP.AspectManager.BuildAgentAspect(this.ProxyName);
+	foreach (NHExt.Runtime.AOP.IAgentAspect aspect in aspectList) {
+		aspect.BeforeDo(this,invoker.ParamList);
+	}
+	object obj = this.invoker.Do();
+	{Return} result;
+	if (this.invoker.CallerType == NHExt.Runtime.Session.CallerTypeEnum.WCF)
+	{
+		string xml = string.Empty;
+		if(obj != null){
+			xml = obj.ToString();
+		}
+		NHExt.Runtime.Logger.LoggerHelper.Info("远程wcf返回数据为:" + xml, NHExt.Runtime.Logger.LoggerInstance.RuntimeLogger);
+		try{
+			result = NHExt.Runtime.Serialize.XmlSerialize.DeSerialize<{Return}>(xml);
+		}
+		catch(Exception ex){
+			 throw new NHExt.Runtime.Exceptions.RuntimeException("反序列化WCF返回数据错误，实体类型“"+typeof({Return}).FullName+"”,返回数据为"+xml);
+		}
+	}
+	else
+	{
+		result= ({Return})obj;
+	}
+	foreach (NHExt.Runtime.AOP.IAgentAspect aspect in aspectList)
+	{
+		aspect.AfterDo(this,result);
+	}
+	return result;
+

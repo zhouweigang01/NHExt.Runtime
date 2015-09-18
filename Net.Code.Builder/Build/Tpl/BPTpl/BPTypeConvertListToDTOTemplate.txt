@@ -1,0 +1,9 @@
+﻿List<{Return}> result = new List<{Return}>();
+foreach(var o in obj){
+	if(o != null){
+		result.Add(o.ToDTO());
+	}
+}
+ 
+return result;
+ 

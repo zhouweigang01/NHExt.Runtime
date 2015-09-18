@@ -1,0 +1,7 @@
+﻿if(this.{Code} != null){
+	cloneObj.{Code} = new {TypeString}();
+	cloneObj.{Code}.ID = this.{Code}.ID;
+}else{
+	cloneObj.{Code} = null;
+}
+

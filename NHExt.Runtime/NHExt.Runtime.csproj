@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3ECCBB6-C484-4453-90B9-B36B873A11C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NHExt.Runtime</RootNamespace>
+    <AssemblyName>NHExt.Runtime</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\Lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\Lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\Lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\Lib\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AOP\AspectManager.cs" />
+    <Compile Include="AOP\IAgentAspect.cs" />
+    <Compile Include="AOP\IEntityAspect.cs" />
+    <Compile Include="AOP\IProxyAspect.cs" />
+    <Compile Include="Auth\AuthContext.cs" />
+    <Compile Include="Auth\ProxyProperty.cs" />
+    <Compile Include="Cache\AbstractCache.cs" />
+    <Compile Include="Cache\CacheFactory.cs" />
+    <Compile Include="Cache\Instance\EntityColumnCache.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\Instance\RuntimeCache.cs" />
+    <Compile Include="EntityAttribute\BussinesAttribute.cs" />
+    <Compile Include="EntityAttribute\ColumnDescriptionAttribute.cs" />
+    <Compile Include="EntityAttribute\EnumPropertyAttribute.cs" />
+    <Compile Include="EntityAttribute\LoggerAttribute.cs" />
+    <Compile Include="EntityAttribute\RefrenceAttribute.cs" />
+    <Compile Include="Enums\EntityState.cs" />
+    <Compile Include="Enums\RefrenceTypeEnum.cs" />
+    <Compile Include="Enums\TransactionSupport.cs" />
+    <Compile Include="Enums\ViewRangeEnum.cs" />
+    <Compile Include="Exceptions\AppException.cs" />
+    <Compile Include="Exceptions\BizException.cs" />
+    <Compile Include="Exceptions\NoAuthPermissionException.cs" />
+    <Compile Include="Exceptions\ProxyMarchErrorException.cs" />
+    <Compile Include="Exceptions\RuntimeException.cs" />
+    <Compile Include="Exceptions\SysVersionErrorException.cs" />
+    <Compile Include="Logger\LoggerHelper.cs" />
+    <Compile Include="Logger\LoggerInstance.cs" />
+    <Compile Include="Model\BaseDTO.cs" />
+    <Compile Include="Model\BaseEntity.cs" />
+    <Compile Include="Model\BaseEnum.cs" />
+    <Compile Include="Model\BaseEnumDTO.cs" />
+    <Compile Include="Model\EntityKey.cs" />
+    <Compile Include="Model\IBizAgent.cs" />
+    <Compile Include="Model\IBizProxy.cs" />
+    <Compile Include="Model\IDTO.cs" />
+    <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\IEnum.cs" />
+    <Compile Include="Model\IEnumDTO.cs" />
+    <Compile Include="Model\ProxyData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\AbstractInvoker.cs" />
+    <Compile Include="Proxy\AgentInvoker.cs" />
+    <Compile Include="Proxy\Host\WCFHostFactory.cs" />
+    <Compile Include="Proxy\Host\WCFServiceHost.cs" />
+    <Compile Include="Proxy\InvokerFactory.cs" />
+    <Compile Include="Proxy\ProxyContext.cs" />
+    <Compile Include="Proxy\ProxyInvoker.cs" />
+    <Compile Include="Proxy\ReflectInvoker.cs" />
+    <Compile Include="Proxy\TaskThreadPool.cs" />
+    <Compile Include="Proxy\WCFInvoker.cs" />
+    <Compile Include="Query\EntityFinder.cs" />
+    <Compile Include="Query\EntityQuery.cs" />
+    <Compile Include="Query\HqlHelper.cs" />
+    <Compile Include="Query\QueryParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Session\MyInterceptor.cs" />
+    <Compile Include="Session\SecondCache.cs" />
+    <Compile Include="Session\Session.cs" />
+    <Compile Include="Session\SessionCache.cs" />
+    <Compile Include="Session\Transaction.cs" />
+    <Compile Include="Cfg.cs" />
+    <Compile Include="Util\Brower.cs" />
+    <Compile Include="Util\ChineseConvertion.cs" />
+    <Compile Include="Util\IocFactory.cs" />
+    <Compile Include="Web\Application\WebApplication.cs" />
+    <Compile Include="Web\HttpHandler\AbstractHttpHander.cs" />
+    <Compile Include="Web\HttpHandler\CommonHandler.cs" />
+    <Compile Include="Web\HttpHandler\DirectRequest.cs" />
+    <Compile Include="Web\HttpHandler\DirectResponse.cs" />
+    <Compile Include="Web\HttpHandler\WCFHandler.cs" />
+    <Compile Include="Web\Page\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\DirectResponseSerialize.cs" />
+    <Compile Include="Serialize\JsonSerialize.cs" />
+    <Compile Include="Util\AssemblyManager.cs" />
+    <Compile Include="Util\AttributeHelper.cs" />
+    <Compile Include="Util\CloneHelper.cs" />
+    <Compile Include="Util\DateTimeUtil.cs" />
+    <Compile Include="Util\EncryptHelper.cs" />
+    <Compile Include="Util\EntityGuidHelper.cs" />
+    <Compile Include="Util\RPN.cs" />
+    <Compile Include="Serialize\XmlSerialize.cs" />
+    <Compile Include="Web\WebServiceInvoker.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

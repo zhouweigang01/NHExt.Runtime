@@ -1,0 +1,11 @@
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Config\TypeMapping.xml
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Net.Code.Generator.Console.exe.config
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Net.Code.Generator.Console.exe
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Net.Code.Generator.Console.pdb
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Net.Code.Builder.dll
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Microsoft.VisualStudio.TextTemplating.10.0.dll
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\bin\Debug\Net.Code.Builder.pdb
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\obj\x86\Debug\Net.Code.Generator.Console.csprojResolveAssemblyReference.cache
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\obj\x86\Debug\Net.Code.Generator.Console.exe
+E:\公司代码\平台工具\NHExtend\Net.Code.Generator.Console\obj\x86\Debug\Net.Code.Generator.Console.pdb

@@ -1,0 +1,62 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="Net.Code.Builder.Base" #>
+<#@ import namespace="Net.Code.Builder.Build" #>
+<#@ import namespace="Net.Code.Builder.Build.Model" #>
+<#@ parameter type="Net.Code.Builder.Build.TemplateDTO.BEEntity" name="entity" #>
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.EntityAttribute;
+using NHExt.Runtime.Model;
+using NHExt.Runtime.Session;
+namespace <#= entity.Namespace#>
+{
+    public partial class <#= entity.Code#>
+    {
+
+        private void FromDTOImpl(Deploy.<#= entity.Code#>DTO dto)
+        {
+
+        }
+        private void ToDTOImpl(Deploy.<#= entity.Code#>DTO dto)
+        {
+
+        }
+        private void OnSetDefaultValue()
+        {
+            
+        }
+        private void OnValidate()
+        {
+            
+        }
+        private void OnInserting()
+        {
+
+        }
+        private void OnInserted()
+        {
+
+
+        }
+        private void OnUpdating()
+        {
+
+        }
+        private void OnUpdated()
+        {
+
+        }
+        private void OnDeleting()
+        {
+
+        }
+        private void OnDeleted()
+        {
+
+        }
+    }
+}
+

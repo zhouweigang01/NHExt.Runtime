@@ -1,0 +1,6 @@
+﻿public override object Do(NHExt.Runtime.Proxy.ProxyContext ctx)
+{
+	this._callerType = NHExt.Runtime.Session.CallerTypeEnum.Reflect;
+	var obj = this.TypeConvert(this.DoCommon(ctx));
+	return obj;
+}

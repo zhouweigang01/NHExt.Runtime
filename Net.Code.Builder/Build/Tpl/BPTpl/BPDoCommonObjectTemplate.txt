@@ -1,0 +1,35 @@
+﻿private {Return} DoCommon(NHExt.Runtime.Proxy.ProxyContext ctx)
+{
+	using (NHExt.Runtime.Session.Transaction trans = NHExt.Runtime.Session.Transaction.New({Trans}, ctx.UseReadDB))
+	{
+		List<NHExt.Runtime.AOP.IProxyAspect> aspectList = new List<NHExt.Runtime.AOP.IProxyAspect>();
+		try
+		{
+			this.InitParameter(ctx);
+			ctx.ProxyStack.Add(new NHExt.Runtime.Auth.ProxyProperty() { ProxyGuid = this.Guid, ProxyName = this.ProxyName });
+			aspectList = NHExt.Runtime.AOP.AspectManager.BuildProxyAspect(this.ProxyName);
+			foreach (NHExt.Runtime.AOP.IProxyAspect insector in aspectList)
+			{
+				insector.BeforeDo(this,ctx);
+			}
+			var obj = this.DoExtend();
+
+			NHExt.Runtime.Session.Session.Current.Commit();
+				 
+			foreach (NHExt.Runtime.AOP.IProxyAspect insector in aspectList)
+			{
+				insector.AfterDo(this,obj);
+			}
+			trans.Commit();
+			return obj;
+		}
+		catch  
+		{
+			trans.RollBack();
+			throw ;
+		}
+		finally{
+			ctx.ProxyStack.RemoveAt(ctx.ProxyStack.Count -1);
+		}
+	}
+}

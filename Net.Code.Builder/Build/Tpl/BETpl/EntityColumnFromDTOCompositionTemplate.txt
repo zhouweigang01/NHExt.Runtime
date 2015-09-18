@@ -1,0 +1,27 @@
+﻿		if(dto.{Code}.Count > 0){
+			//entity.{Code}.Clear();
+			foreach({Class} childDTO in dto.{Code}){
+				{TypeString} subEntity = null;
+				foreach({TypeString} tmpChild in entity.{Code}){
+					if(tmpChild.ID == childDTO.ID){
+						subEntity = tmpChild;
+						break;
+					}
+				}
+				
+			    if(subEntity == null || entity.EntityState == NHExt.Runtime.Enums.EntityState.Add)
+				{
+				//新增的逻辑需要将父实体添加到缓存里面去，为了后来重新给子实体赋值父实体KEY
+					NHExt.Runtime.Session.Session.Current.InList(entity);
+					subEntity = {TypeString}.Create(entity);
+					entity.{Code}.Add(subEntity);
+				}
+				else if(subEntity.EntityState == NHExt.Runtime.Enums.EntityState.Delete){
+					NHExt.Runtime.Session.Session.Current.InList(subEntity);
+				} 
+				subEntity.FromDTO(childDTO);
+				//if(subEntity.EntityState == NHExt.Runtime.Enums.EntityState.Delete || subEntity.EntityState == NHExt.Runtime.Enums.EntityState.Update){
+				//	NHExt.Runtime.Session.Session.Current.InList(entity);
+				//}
+			}
+		}

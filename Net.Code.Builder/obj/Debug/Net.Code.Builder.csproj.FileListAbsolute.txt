@@ -1,0 +1,9 @@
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\obj\Debug\Net.Code.Builder.csprojResolveAssemblyReference.cache
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\obj\Debug\Net.Code.Builder.Properties.Resources.resources
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\obj\Debug\Net.Code.Builder.csproj.GenerateResource.Cache
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\obj\Debug\Net.Code.Builder.pdb
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\bin\Debug\Net.Code.Builder.dll
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\bin\Debug\Net.Code.Builder.pdb
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\bin\Debug\Microsoft.VisualStudio.TextTemplating.10.0.dll
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+E:\公司代码\平台工具\NHExtend\Net.Code.Builder\obj\Debug\Net.Code.Builder.dll

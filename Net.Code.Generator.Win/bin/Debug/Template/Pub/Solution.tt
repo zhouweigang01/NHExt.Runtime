@@ -1,0 +1,53 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="Net.Code.Builder.Base" #>
+<#@ import namespace="Net.Code.Builder.Build" #>
+<#@ import namespace="Net.Code.Builder.Build.Model" #>
+<#@ parameter type="Net.Code.Builder.Build.TemplateDTO.Solution" name="entity" #>
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+<#
+for(int i=0;i<entity.GuidList.Count;i++){
+#>
+<# if(entity.ProjList[i].Type == Net.Code.Builder.Build.TemplateDTO.ProjType.BE){#>
+Project("{<#= entity.GuidList[i] #>}") = "<#= entity.ProjList[i].DllName #>", "BE\\<#= entity.ProjList[i].DllName #>.csproj ", "{<#= entity.ProjList[i].Guid #>}"
+EndProject
+<#;
+} else if(entity.ProjList[i].Type == Net.Code.Builder.Build.TemplateDTO.ProjType.Agent){#>
+Project("{<#= entity.GuidList[i] #>}") = "<#= entity.ProjList[i].DllName #>", "Agent\\<#= entity.ProjList[i].DllName #>.csproj ", "{<#= entity.ProjList[i].Guid #>}"
+EndProject
+<#;
+} else if(entity.ProjList[i].Type == Net.Code.Builder.Build.TemplateDTO.ProjType.Deploy){ #>
+Project("{<#= entity.GuidList[i] #>}") = "<#= entity.ProjList[i].DllName #>", "Deploy\\<#= entity.ProjList[i].DllName #>.csproj ", "{<#= entity.ProjList[i].Guid #>}"
+EndProject
+<#;
+} else if(entity.ProjList[i].Type == Net.Code.Builder.Build.TemplateDTO.ProjType.BP){#>
+Project("{<#= entity.GuidList[i] #>}") = "<#= entity.ProjList[i].DllName #>", "BP\\<#= entity.ProjList[i].DllName #>.csproj ", "{<#= entity.ProjList[i].Guid #>}"
+EndProject
+<#;
+}#>
+<#;
+}
+#>
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<#
+foreach(Net.Code.Builder.Build.TemplateDTO.Project proj in entity.ProjList){
+#>
+	{<#= proj.Guid #>}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+	{<#= proj.Guid #>}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	{<#= proj.Guid #>}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+	{<#= proj.Guid #>}.Release|Any CPU.Build.0 = Debug|Any CPU
+<#;
+}
+#>
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+

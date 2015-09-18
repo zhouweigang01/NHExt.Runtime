@@ -1,0 +1,4 @@
+﻿		if(dto.{Code} > 0)
+		{
+			entity.{Code}=({TypeString})dto.{Code};
+		}

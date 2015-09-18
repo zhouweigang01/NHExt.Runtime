@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.Enums;
+using NHExt.Runtime.Model;
+
+namespace {NameSpace}
+{
+	[Serializable]
+    public partial class {Class} : NHExt.Runtime.Model.BaseEnum
+    {
+        protected {Class}(int v, string code, string name)
+            : base(v, code, name, typeof({NameSpace}.{Class}))
+        {
+        }
+        public {Class}()
+            : base(typeof({NameSpace}.{Class}))
+        {
+
+        }
+		public static explicit operator {Class}(int value)
+        {
+            return  BaseEnum.GetEnum<{Class}>(value);
+        }
+
+        public static explicit operator int({Class} obj)
+        {
+            return obj.EnumValue;
+        }
+
+		#region 实体查询相关函数
+		public static class Finder{
+			public static  {Class} FindByID(int enumId){
+				return   NHExt.Runtime.Model.BaseEnum.GetEnum<{Class}>(enumId);
+			}
+			public static  {Class} FindByCode(string enumCode){
+				return   NHExt.Runtime.Model.BaseEnum.GetEnum<{Class}>(enumCode);
+			}
+		}
+		#endregion 

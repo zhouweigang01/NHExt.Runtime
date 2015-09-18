@@ -1,0 +1,5 @@
+﻿		dto.{Code}.Clear();
+		foreach ({TypeString} ce in this.{Code})
+		{
+			dto.{Code}.Add(ce.ToDTO());
+		}

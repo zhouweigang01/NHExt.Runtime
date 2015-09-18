@@ -1,0 +1,15 @@
+﻿<TaskList>
+  <TaskCategory Begin="" End="" >
+    <AuthContext>
+      <Org>1303110318170000</Org>
+      <User>nt_admin</User>
+      <Pwd>123456</Pwd>
+    </AuthContext>
+
+    <Task Assembly="IWEHAVE.ERP.StoreBP.Agent.SynGISMapBPProxy" DllName="IWEHAVE.ERP.StoreBP.Agent.dll" DisplayName="同步GIS地图">
+      <Param></Param>
+    </Task>
+
+  </TaskCategory>
+
+</TaskList>

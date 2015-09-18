@@ -1,0 +1,5 @@
+﻿		default:
+			base.SetValue(obj,memberName);
+			break;
+		}
+	}

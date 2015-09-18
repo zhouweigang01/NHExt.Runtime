@@ -1,0 +1,6 @@
+﻿		if(dto.{Code} <=0){
+			entity.{Code}Key = null;
+		}
+		else {
+			entity.{Code}Key = new EntityKey<{TypeString}>(dto.{Code});
+		}

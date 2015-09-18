@@ -1,0 +1,21 @@
+﻿public override NHExt.Runtime.Model.WCFCallDTO DoWCF(NHExt.Runtime.Proxy.ProxyContext ctx)
+{
+	string xml = string.Empty;
+	NHExt.Runtime.Model.WCFCallDTO callDTO = new NHExt.Runtime.Model.WCFCallDTO();
+	try
+	{
+		this._callerType = NHExt.Runtime.Session.CallerTypeEnum.WCF;
+		var obj = this.TypeConvert(this.DoCommon(ctx));
+		if (obj != null) {
+			xml = NHExt.Runtime.Serialize.XmlSerialize.Serialize(obj);
+		}else{
+			xml = string.Empty;
+		}
+		callDTO.Success = true;
+	}
+	catch(Exception ex){
+		xml = ex.Message;
+	}
+	callDTO.Result = xml;
+	return callDTO;
+}

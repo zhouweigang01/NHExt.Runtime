@@ -1,0 +1,6 @@
+﻿public override NHExt.Runtime.Model.BaseEntity Clone()
+{
+	{Class} cloneObj = new {Class}();
+	this.Clone(cloneObj);
+	return cloneObj;
+}

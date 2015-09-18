@@ -1,0 +1,3 @@
+﻿	public override void SetValue(object obj, string memberName)
+	{
+		switch(memberName){

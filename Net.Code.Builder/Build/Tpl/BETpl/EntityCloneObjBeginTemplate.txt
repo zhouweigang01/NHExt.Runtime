@@ -1,0 +1,4 @@
+﻿public virtual void Clone({Class} cloneObj) {
+    base.Clone(cloneObj);
+
+

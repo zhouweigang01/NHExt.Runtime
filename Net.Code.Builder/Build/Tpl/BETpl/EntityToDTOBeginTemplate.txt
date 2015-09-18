@@ -1,0 +1,9 @@
+﻿ public new virtual {TypeString} ToDTO()
+	{
+        {TypeString} dto = new {TypeString}();
+        this.ToDTO(dto);
+        return dto;
+    }
+protected virtual void ToDTO({TypeString} dto)
+	{
+		  base.ToDTO(dto);

@@ -1,0 +1,69 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="Net.Code.Builder.Base" #>
+<#@ import namespace="Net.Code.Builder.Build" #>
+<#@ import namespace="Net.Code.Builder.Build.Model" #>
+<#@ parameter type="Net.Code.Builder.Build.TemplateDTO.Project" name="entity" #>
+<Project DefaultTargets = "Compile"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+  <ItemGroup>
+    <#
+    foreach(string assm in entity.CommonRefList){
+    #>
+		<Reference Include="<#= assm#>"><HintPath>..\\..\\..\\Runtime\\<#= assm#>.dll</HintPath></Reference>
+    <#;
+	}
+	#>
+	 <#
+    foreach(string assm in entity.RefrenceList){
+    #>
+		<Reference Include="<#= assm#>"><HintPath>..\\..\\..\\ApplicationLib\\<#= assm#>.dll</HintPath></Reference>
+    <#;
+	}
+	#>
+  </ItemGroup>
+  <ItemGroup>
+	<# if(entity.Type == Net.Code.Builder.Build.TemplateDTO.ProjType.Agent){ #>
+		<#
+		foreach(string assm in entity.FileList){
+		#>
+			<Compile Include="Proxy\\<#= assm#>.cs" />
+		<#;
+		}
+		#>
+	<#} else if(entity.Type == Net.Code.Builder.Build.TemplateDTO.ProjType.BP){#>
+		<#
+		foreach(string assm in entity.FileList){
+		#>
+			<Compile Include="BPEntity\\<#= assm#>.cs" />
+		<#;
+		}
+		#>
+	<#} else{#>
+		<#
+		foreach(string assm in entity.FileList){
+		#>
+			<Compile Include="Entity\\<#= assm#>.cs" />
+		<#;
+		}
+		#>
+	<#;
+	}
+	#>
+  </ItemGroup>
+  <# 
+	if(entity.CfgFileList.Count > 0){
+	#>
+	  <ItemGroup>
+			<#
+			foreach(string assm in entity.CfgFileList){
+			#>
+				<EmbeddedResource Include="ConfigFiles\\<#= assm#>.hbm.xml"><SubType>Designer</SubType></EmbeddedResource>
+			<#;
+			}
+			#>
+	  </ItemGroup>
+	<#;
+	}
+	#>
+</Project>

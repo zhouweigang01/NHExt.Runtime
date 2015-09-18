@@ -1,0 +1,145 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="Net.Code.Builder.Base" #>
+<#@ import namespace="Net.Code.Builder.Build" #>
+<#@ import namespace="Net.Code.Builder.Build.Model" #>
+<#@ parameter type="Net.Code.Builder.Build.TemplateDTO.BEEntityDTO" name="entity" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.Model;
+namespace <#= entity.Namespace#>
+{
+	[Serializable]
+	public partial class <#= entity.Code#> : <#= entity.InhertClass#>
+	{
+		#region 属性字段
+		<#  foreach(Net.Code.Builder.Build.TemplateDTO.BEColumnDTO col in entity.ColumnList)
+		{
+		#>
+			<#if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Common"){#>
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				private  <#= col.Type#> <#= col.NullMark#> _<#= col.Code#> ;
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>)]
+				public virtual <#= col.Type#><#= col.NullMark#> <#= col.Code#>
+				{
+					get
+					{
+						return this._<#= col.Code#>;
+					}
+					set
+					{
+						this._<#= col.Code#> = value;
+					}
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Enum"){ 
+			#>  
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				private  <#= col.Type#><#= col.NullMark#> _<#= col.Code#> ;
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>)]
+				public virtual <#= col.Type#><#= col.NullMark#> <#= col.Code#>
+				{
+					get
+					{
+						return this._<#= col.Code#>;
+					}
+					set
+					{
+						this._<#= col.Code#> = value;
+					}
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Entity"){ 
+			#>
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				private  <#= col.Type#> _<#= col.Code#> ;
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>)]
+				public virtual <#= col.Type#> <#= col.Code#>
+				{
+					get
+					{
+						return this._<#= col.Code#>;
+					}
+					set
+					{
+						this._<#= col.Code#> = value;
+					}
+				}
+			<#;
+			}else  if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Composition"){ 
+			#>
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				private List<<#= col.Type#>> _<#= col.Code#> = new List<<#= col.Type#>>();
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>)]
+				public virtual List<<#= col.Type#>> <#= col.Code#>
+				{
+					  get 
+					  { 
+							return _<#= col.Code#>; 
+					  }
+					  set 
+					  { 
+							_<#= col.Code#> =value;
+					  }
+				 }
+
+			<#;
+			}
+			#> 
+		<#;
+		}
+		#> 
+		#endregion
+
+		public override void SetValue(object obj, string memberName)
+		{
+			switch(memberName){
+		<#  foreach(Net.Code.Builder.Build.TemplateDTO.BEColumnDTO col in entity.ColumnList)
+		{
+		#>
+			case "<#= col.Code#>" :
+				<#
+				if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Composition"){
+				#>
+				this._<#= col.Code#> = this.TransferValue<List<<#= col.Type#><#= col.NullMark#>>>(obj);
+				
+				<#;
+				}else{
+				#>
+				this._<#= col.Code#> = this.TransferValue<<#= col.Type#><#= col.NullMark#>>(obj);
+				<#;
+				}
+				#>
+				break;
+		<#;
+		}
+		#> 
+			default:
+				base.SetValue(obj,memberName);
+			break;
+		}
+		}
+	}
+}

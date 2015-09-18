@@ -1,0 +1,4 @@
+﻿		if (this.{Code} != null)
+        {
+           dto.{Code} = this.{Code}.EnumValue;
+        }

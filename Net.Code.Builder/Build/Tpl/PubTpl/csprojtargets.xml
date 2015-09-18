@@ -1,0 +1,12 @@
+﻿<Project DefaultTargets = "Compile"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+  <ItemGroup>
+    {RefrenceDll}
+  </ItemGroup>
+  <ItemGroup>
+    {CompileFiles}
+  </ItemGroup>
+  <ItemGroup>
+    {EmbeddedResource}
+  </ItemGroup>
+</Project>

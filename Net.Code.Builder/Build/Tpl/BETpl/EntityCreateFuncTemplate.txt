@@ -1,0 +1,6 @@
+﻿///根据聚合实体的主实体创建主实体的子实体
+public static {Class} Create({TypeString} primaryEntity){
+	{Class} entity= Create(false);
+	entity.{Code}=primaryEntity;
+	return entity;
+}

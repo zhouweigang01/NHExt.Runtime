@@ -1,0 +1,5 @@
+﻿	public virtual void FromDTO({Class} dto){
+		this.FromDTO(dto,this);
+	}
+	protected virtual void FromDTO({Class} dto , {TypeString} entity){
+		base.FromDTO(dto,entity);

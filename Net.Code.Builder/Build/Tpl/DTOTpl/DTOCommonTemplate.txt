@@ -1,0 +1,17 @@
+/// <summary>
+/// {Memo}
+/// </summary>
+private {TypeString} {IsNull} _{Code} ;
+/// <summary>
+/// {Memo}
+/// </summary>
+[NHExt.Runtime.EntityAttribute.ColumnDescription(Code="{Code}",Description = "{Memo}",EntityRefrence={EntityRefrence},IsViewer={IsViewer})]
+public virtual {TypeString} {IsNull} {Code}
+{
+get{
+return _{Code};
+}
+set{
+this._{Code}=value;
+}
+}

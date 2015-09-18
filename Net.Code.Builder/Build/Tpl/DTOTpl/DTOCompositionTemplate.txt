@@ -1,0 +1,17 @@
+/// <summary>
+/// {Memo}
+/// </summary>
+private List<{TypeString}> _{Code} = new List<{TypeString}>();
+/// <summary>
+/// {Memo}
+/// </summary>
+[NHExt.Runtime.EntityAttribute.ColumnDescription(Code="{Code}",Description = "{Memo}",EntityRefrence={EntityRefrence},IsViewer={IsViewer})]
+public virtual List<{TypeString}> {Code}
+{
+   get { 
+   return _{Code}; 
+   }
+  set { 
+		_{Code} =value;
+	}
+ }

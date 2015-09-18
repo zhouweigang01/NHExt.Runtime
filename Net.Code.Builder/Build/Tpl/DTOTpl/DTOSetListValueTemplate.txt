@@ -1,0 +1,3 @@
+﻿case "{Code}" :
+	this._{Code} = this.TransferValue<List<{TypeString}> >(obj);
+	break;

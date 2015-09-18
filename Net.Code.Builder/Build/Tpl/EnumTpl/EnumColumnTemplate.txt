@@ -1,0 +1,19 @@
+﻿/// <summary>
+/// {Memo}
+/// </summary>
+private static {Class} _{Code};
+/// <summary>
+/// {Memo}
+/// </summary>
+[NHExt.Runtime.EntityAttribute.EnumProperty]
+public static {Class} {Code}
+{
+    get
+    {
+        if (_{Code} == null)
+        {
+            _{Code} = new {Class}({Value}, "{Code}", "{Name}");
+        }
+        return _{Code};
+    }
+}

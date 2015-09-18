@@ -1,0 +1,3 @@
+﻿protected override void InitParameter(NHExt.Runtime.Proxy.ProxyContext ctx){
+	base.InitParameter(ctx);
+	if(ctx != null){

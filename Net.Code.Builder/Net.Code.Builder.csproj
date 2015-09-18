@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AFD3917-03EA-4A07-AB55-07E8D4D6A685}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Net.Code.Builder</RootNamespace>
+    <AssemblyName>Net.Code.Builder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Microsoft.VisualStudio.TextTemplating.10.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AbstractPlatformComponent.cs" />
+    <Compile Include="Base\DataState.cs" />
+    <Compile Include="Base\DataTypeEnum.cs" />
+    <Compile Include="Base\IBuild.cs" />
+    <Compile Include="Base\IPlatformComponent.cs" />
+    <Compile Include="Base\IProject.cs" />
+    <Compile Include="Base\ProjectTypeEnum.cs" />
+    <Compile Include="Build\BEBuild\BuildEntity.cs" />
+    <Compile Include="Build\BEBuild\BuildEntityColumn.cs" />
+    <Compile Include="Build\BEBuild\BuildEntityCommon.cs" />
+    <Compile Include="Build\BEBuild\BuildEntityComposition.cs" />
+    <Compile Include="Build\BEBuild\BuildEntityEnumColumn.cs" />
+    <Compile Include="Build\BEBuild\BuildEntityProj.cs" />
+    <Compile Include="Build\BEBuild\BuildEntityRefrence.cs" />
+    <Compile Include="Build\BEBuild\BuildEntityColumnFactory.cs" />
+    <Compile Include="Build\BEBuild\ORMTypeMapping.cs" />
+    <Compile Include="Build\BPBuild\BuildBP.cs" />
+    <Compile Include="Build\BPBuild\BuildBPAgent.cs" />
+    <Compile Include="Build\BPBuild\BuildBPColumn.cs" />
+    <Compile Include="Build\BPBuild\BuildBPColumnFactory.cs" />
+    <Compile Include="Build\BPBuild\BuildBPCommon.cs" />
+    <Compile Include="Build\BPBuild\BuildBPComposition.cs" />
+    <Compile Include="Build\BPBuild\BuildBPProj.cs" />
+    <Compile Include="Build\BPBuild\BuildBPRefrence.cs" />
+    <Compile Include="Build\CodeBuilder.cs" />
+    <Compile Include="Build\DTOBuild\BuildDTOColumn.cs" />
+    <Compile Include="Build\DTOBuild\BuildDTOCommon.cs" />
+    <Compile Include="Build\DTOBuild\BuildDTOComposition.cs" />
+    <Compile Include="Build\DTOBuild\BuildDTOEntity.cs" />
+    <Compile Include="Build\DTOBuild\BuildDTOEnumRefrence.cs" />
+    <Compile Include="Build\DTOBuild\BuildDTORefrence.cs" />
+    <Compile Include="Build\EnumBuild\BuildEnumColumn.cs" />
+    <Compile Include="Build\EnumBuild\BuildEnumDTOColumn.cs" />
+    <Compile Include="Build\EnumBuild\BuildEnumDTOEntity.cs" />
+    <Compile Include="Build\EnumBuild\BuildEnumEntity.cs" />
+    <Compile Include="Build\Model\BEColumn.cs" />
+    <Compile Include="Build\Model\BEEntity.cs" />
+    <Compile Include="Build\Model\BEProj.cs" />
+    <Compile Include="Build\Model\BPColumn.cs" />
+    <Compile Include="Build\Model\BPEntity.cs" />
+    <Compile Include="Build\Model\BPProj.cs" />
+    <Compile Include="Build\Model\DTOColumn.cs" />
+    <Compile Include="Build\Model\DTOEntity.cs" />
+    <Compile Include="Build\Model\EnumColumn.cs" />
+    <Compile Include="Build\Model\EnumEntity.cs" />
+    <Compile Include="Build\Model\Floder.cs" />
+    <Compile Include="Build\Model\ProjectFactory.cs" />
+    <Compile Include="Build\Model\ProjectRefrence.cs" />
+    <Compile Include="Build\Model\ViewRangeEnum.cs" />
+    <Compile Include="Build\TemplateBuild\BuildBPProj.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Build\TemplateBuild\BuildEntityProj.cs" />
+    <Compile Include="Build\TemplateDTO\BEEntityDTO.cs" />
+    <Compile Include="Build\TemplateDTO\BEEntity.cs" />
+    <Compile Include="Build\TemplateDTO\BPEntity.cs" />
+    <Compile Include="Build\TemplateDTO\Enum.cs" />
+    <Compile Include="Build\TemplateDTO\Project.cs" />
+    <Compile Include="Build\TemplateDTO\Solution.cs" />
+    <Compile Include="Build\TextEngineHost.cs" />
+    <Compile Include="Build\Tpl\Attributes.cs" />
+    <Compile Include="Build\Tpl\BECodeTemplate.cs" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnFromDTOCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnFromDTOCompositionTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnFromDTOEnumTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnFromDTORefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnToDTOCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnToDTOCompositionTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnToDTOEnumTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityColumnToDTORefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityFromDTOBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityFromDTOEndTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityToDTOEndTemplate.txt" />
+    <Compile Include="Build\Tpl\BPCodeTemplate.cs" />
+    <Content Include="Build\Tpl\BETpl\EntityToDTOBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPDoObjectObjectTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyDoListEndTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPSetCommonValueTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPSetListValueTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPSetValueBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPTypeConvertBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPSetValueEndTemplate.txt" />
+    <Compile Include="Build\Tpl\DTOCodeTemplate.cs" />
+    <Compile Include="Build\Tpl\EnumCodeTemplate.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\OutPut.cs" />
+    <Compile Include="Util\PubVariable .cs" />
+    <Compile Include="Util\UtilHelper.cs" />
+    <Content Include="DLL\Microsoft.VisualStudio.TextTemplating.10.0.dll" />
+    <Content Include="DLL\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Build\Tpl\BETpl\EntityClassBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityClassEndTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityClassExtendTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCloneCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCloneEnumTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCloneFunctionTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCloneObjBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCloneObjEndTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCloneRefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCompositionTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityConstructorBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityConstructorEndTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityCreateFuncTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityEnumRefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityRefrenceCompositionTemplate.txt" />
+    <Content Include="Build\Tpl\BETpl\EntityRefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPClassBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPClassEndTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPClassExtendTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPClassInitParamBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPClassInitParamCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPClassInitParamCompositionTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPClassInitParamEndTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPCompositionTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPDoExtendObjectTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPDoCommonObjectTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPTypeConvertCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPTypeConvertListToDTOTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPTypeConvertToDTOTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPDoWcfObjectTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyClassBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyClassEndTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyConstructorTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyDoCommonBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyDoCommonTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyDoCommonEndTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyDoListBeginTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyDoListTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPProxyInitParamListTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPRefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\BPTpl\BPTypeConvertEndTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOClassBeginTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOClassEndTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOClassExtendTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOCommonTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOCompositionTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOEnumRefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTORefrenceTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOSetCommonValueTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOSetListValueTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOSetValueBeginTemplate.txt" />
+    <Content Include="Build\Tpl\DTOTpl\DTOSetValueEndTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumClassBeginTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumClassEndTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumClassExtendTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumColumnTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumDTOClassBeginTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumDTOClassEndTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumDTOClassExtendTemplate.txt" />
+    <Content Include="Build\Tpl\EnumTpl\EnumDTOColumnTemplate.txt" />
+    <Content Include="Build\Tpl\PubTpl\AssemblyInfo.xml" />
+    <Content Include="Build\Tpl\PubTpl\csproj.xml" />
+    <Content Include="Build\Tpl\PubTpl\csprojtargets.xml" />
+    <Content Include="Build\Tpl\PubTpl\solution.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

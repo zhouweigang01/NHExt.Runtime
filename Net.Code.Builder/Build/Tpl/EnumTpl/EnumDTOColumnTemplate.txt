@@ -1,0 +1,20 @@
+﻿/// <summary>
+/// {Memo}
+/// </summary>
+private static {Class} _{Code};
+/// <summary>
+/// {Memo}
+/// </summary>
+[NHExt.Runtime.EntityAttribute.EnumProperty]
+[NHExt.Runtime.EntityAttribute.ColumnDescription(Description = "{Memo}")]
+public static {Class} {Code}
+{
+    get
+    {
+        if (_{Code} == null)
+        {
+            _{Code} = new {Class}({Value});
+        }
+        return _{Code};
+    }
+}

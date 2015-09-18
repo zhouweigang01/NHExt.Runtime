@@ -1,0 +1,8 @@
+﻿if(this.{Code} != null){
+	cloneObj.{Code} = new {TypeString}();
+	cloneObj.{Code}.EnumValue = this.{Code}.EnumValue;
+	cloneObj.{Code}.Code = this.{Code}.Code;
+	cloneObj.{Code}.Name = this.{Code}.Name;
+}else{
+	cloneObj.{Code} = null;
+}

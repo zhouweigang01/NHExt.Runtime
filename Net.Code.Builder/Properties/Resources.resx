@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AssemblyInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\pubtpl\assemblyinfo.xml;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPClassBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpclassbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPClassEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpclassendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPClassExtendTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpclassextendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPClassInitParamBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpclassinitparambegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPClassInitParamCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpclassinitparamcommontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPClassInitParamCompositionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpclassinitparamcompositiontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPClassInitParamEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpclassinitparamendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpcommontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPCompositionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpcompositiontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyClassBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxyclassbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyClassEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxyclassendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyConstructorTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxyconstructortemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyDoCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxydocommontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyDoListBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxydolistbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyDoListTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxydolisttemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyInitParamListTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxyinitparamlisttemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPRefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bprefrencetemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="csproj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\pubtpl\csproj.xml;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="csprojtargets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\pubtpl\csprojtargets.xml;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DTOClassBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtoclassbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DTOClassEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtoclassendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DTOClassExtendTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtoclassextendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DTOCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtocommontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DTOCompositionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtocompositiontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="DTOEnumRefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtoenumrefrencetemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DTORefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtorefrencetemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityClassBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityclassbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityClassEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityclassendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityClassExtendTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityclassextendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityCloneCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityclonecommontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityCloneEnumTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycloneenumtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityCloneFunctionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityclonefunctiontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityCloneObjBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycloneobjbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityCloneObjEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycloneobjendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityCloneRefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityclonerefrencetemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycommontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityCompositionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycompositiontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityConstructorBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityconstructorbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityConstructorEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityconstructorendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EntityCreateFuncTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycreatefunctemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityEnumRefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityenumrefrencetemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityRefrenceCompositionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityrefrencecompositiontemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityRefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityrefrencetemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EnumClassBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumclassbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EnumClassEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumclassendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EnumClassExtendTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumclassextendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EnumColumnTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumcolumntemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EnumDTOClassBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumdtoclassbegintemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EnumDTOClassEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumdtoclassendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EnumDTOClassExtendTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumdtoclassextendtemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EnumDTOColumnTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\enumtpl\enumdtocolumntemplate.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="solution" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\pubtpl\solution.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPDoExtendObjectTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpdoextendobjecttemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPDoWcfObjectTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpdowcfobjecttemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPDoObjectObjectTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpdoobjectobjecttemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPTypeConvertBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bptypeconvertbegintemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPTypeConvertEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bptypeconvertendtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPDoCommonObjectTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpdocommonobjecttemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPTypeConvertCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bptypeconvertcommontemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPTypeConvertListToDTOTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bptypeconvertlisttodtotemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPTypeConvertToDTOTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bptypeconverttodtotemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyDoCommonBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxydocommonbegintemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyDoCommonEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxydocommonendtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPProxyDoListEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpproxydolistendtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPSetCommonValueTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpsetcommonvaluetemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPSetListValueTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpsetlistvaluetemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPSetValueBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpsetvaluebegintemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BPSetValueEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\bptpl\bpsetvalueendtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DTOSetCommonValueTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtosetcommonvaluetemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DTOSetListValueTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtosetlistvaluetemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DTOSetValueBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtosetvaluebegintemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DTOSetValueEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\dtotpl\dtosetvalueendtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnToDTOCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumntodtocommontemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnToDTOEnumTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumntodtoenumtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnToDTORefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumntodtorefrencetemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityToDTOBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitytodtobegintemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityToDTOEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitytodtoendtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnToDTOCompositionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumntodtocompositiontemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnFromDTOCommonTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumnfromdtocommontemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnFromDTOCompositionTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumnfromdtocompositiontemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnFromDTOEnumTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumnfromdtoenumtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityColumnFromDTORefrenceTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entitycolumnfromdtorefrencetemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityFromDTOBeginTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityfromdtobegintemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EntityFromDTOEndTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\build\tpl\betpl\entityfromdtoendtemplate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+</root>

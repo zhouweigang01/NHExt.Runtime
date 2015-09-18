@@ -1,0 +1,28 @@
+﻿/// <summary>
+/// {Memo}
+/// </summary>
+[NHExt.Runtime.EntityAttribute.Refrence(RefType=NHExt.Runtime.Enums.RefrenceTypeEnum.PEntity,TargetEntity="{RefrenceEntity}")]
+[NHExt.Runtime.EntityAttribute.ColumnDescription(Code="{Code}",Description = "{Memo}",EntityRefrence={EntityRefrence},IsViewer={IsViewer},IsBizKey={IsBizKey},IsNull={CanNull})]
+public virtual {TypeString} {Code}
+{
+get{
+ return this.GetRefrence<{TypeString}>("{Code}");
+}
+set{
+ this.SetRefrence<{TypeString}>("{Code}",value);
+}
+}
+/// <summary>
+/// {Memo}实体Key
+/// </summary>
+public virtual EntityKey<{TypeString}> {Code}Key
+{
+ get
+  {
+	 return this.GetRefrenceKey<{TypeString}>("{Code}");
+  }
+ set
+  {
+  this.SetRefrenceKey<{TypeString}>("{Code}",value);
+  }
+}

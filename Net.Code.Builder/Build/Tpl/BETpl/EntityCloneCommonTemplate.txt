@@ -1,0 +1,1 @@
+﻿cloneObj.{Code} = this.{Code};

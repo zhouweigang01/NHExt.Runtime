@@ -1,0 +1,1 @@
+﻿		dto.{Code} = this.{Code};

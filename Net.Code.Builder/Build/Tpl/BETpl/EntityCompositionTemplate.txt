@@ -1,0 +1,16 @@
+/// <summary>
+/// {Memo}
+/// </summary>
+[NHExt.Runtime.EntityAttribute.Refrence(RefType=NHExt.Runtime.Enums.RefrenceTypeEnum.Composition,TargetEntity="{RefrenceEntity}")]
+[NHExt.Runtime.EntityAttribute.ColumnDescription(Code="{Code}",Description = "{Memo}",EntityRefrence={EntityRefrence},IsViewer={IsViewer})]
+public virtual IList<{TypeString}> {Code}
+{
+	   get 
+	   { 
+			return this.GetComposition<{TypeString}>("{Code}"); 
+	   }
+	  set 
+	  { 
+			this.SetComposition<{TypeString}>("{Code}",value);
+	  }
+ }

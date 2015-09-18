@@ -1,0 +1,3 @@
+﻿ public override object DoProxy()
+{
+	this.invoker.SourcePage = this.SourcePage;

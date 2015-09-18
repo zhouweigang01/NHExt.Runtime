@@ -1,0 +1,6 @@
+E:\公司代码\平台工具\NHExtend\NHExt.WebUtil\bin\Debug\NHExt.WebUtil.dll
+E:\公司代码\平台工具\NHExtend\NHExt.WebUtil\bin\Debug\NHExt.WebUtil.pdb
+E:\公司代码\平台工具\NHExtend\NHExt.WebUtil\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\公司代码\平台工具\NHExtend\NHExt.WebUtil\obj\Debug\NHExt.WebUtil.csprojResolveAssemblyReference.cache
+E:\公司代码\平台工具\NHExtend\NHExt.WebUtil\obj\Debug\NHExt.WebUtil.dll
+E:\公司代码\平台工具\NHExtend\NHExt.WebUtil\obj\Debug\NHExt.WebUtil.pdb

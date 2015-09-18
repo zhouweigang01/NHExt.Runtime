@@ -1,0 +1,23 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="Net.Code.Builder.Base" #>
+<#@ import namespace="Net.Code.Builder.Build" #>
+<#@ import namespace="Net.Code.Builder.Build.Model" #>
+<#@ parameter type="Net.Code.Builder.Build.TemplateDTO.Enum" name="entity" #>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.EntityAttribute;
+using NHExt.Runtime.Model;
+namespace <#= entity.Namespace#>
+{
+	/// <summary>
+	/// <#= entity.Name#>
+	/// </summary>	
+    public partial class <#= entity.Code#>
+    {
+    }
+}
+

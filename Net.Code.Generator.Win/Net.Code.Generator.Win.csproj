@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2371FCA7-92F3-4DA3-99CA-8FE4B9941F48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Net.Code.Generator.Win</RootNamespace>
+    <AssemblyName>Net.Code.Generator.Win</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangeNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeNameForm.Designer.cs">
+      <DependentUpon>ChangeNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentTreeNode.cs" />
+    <Compile Include="NameInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameInputForm.Designer.cs">
+      <DependentUpon>NameInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutPutMsg.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CodeGeneratorWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeGeneratorWin.Designer.cs">
+      <DependentUpon>CodeGeneratorWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAttributeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectAttributeType.Designer.cs">
+      <DependentUpon>SelectAttributeType.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChangeNameForm.resx">
+      <DependentUpon>ChangeNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameInputForm.resx">
+      <DependentUpon>NameInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeGeneratorWin.resx">
+      <DependentUpon>CodeGeneratorWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectAttributeType.resx">
+      <DependentUpon>SelectAttributeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Template\BE\Entity.tt">
+      <LastGenOutput>Entity.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\BP\BPExtend.tt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\DTO\EntityDTO.tt">
+      <LastGenOutput>EntityDTO.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\DTO\EntityDTOExtend.tt">
+      <LastGenOutput>EntityDTOExtend.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\BE\EntityExtend.tt">
+      <LastGenOutput>EntityExtend.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\BE\Enum.tt">
+      <LastGenOutput>Enum.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\DTO\EnumDTO.tt">
+      <LastGenOutput>EnumDTO.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\DTO\EnumDTOExtend.tt">
+      <LastGenOutput>EnumDTOExtend.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\BE\EnumExtend.tt">
+      <LastGenOutput>EnumExtend.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\BP\BPAgent.tt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\BP\BPProxy.tt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\Pub\Project.tt">
+      <LastGenOutput>Project1.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\Pub\ProjectAssembly.tt">
+      <LastGenOutput>ProjectAssembly.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\Pub\ProjectTargets.tt">
+      <LastGenOutput>ProjectTargets1.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\Pub\Solution.tt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\TypeMapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\001.png" />
+    <Content Include="Resource\003.png" />
+    <Content Include="Resource\005.png" />
+    <Content Include="Resource\008.png" />
+    <Content Include="Resource\083.png" />
+    <Content Include="Resource\086.png" />
+    <None Include="Resource\floder.png" />
+    <None Include="Resource\floder_pen.png" />
+    <None Include="Resource\dto_modify_16.png" />
+    <Content Include="Resource\cmdidAddEntityView.png" />
+    <Content Include="Resource\RefrenceCollpase.png" />
+    <Content Include="Resource\RefrenceDll.png" />
+    <Content Include="Resource\RefrenceExpand.png" />
+    <Content Include="Resource\实体.png" />
+    <None Include="Resource\枚举.png" />
+    <Content Include="Resource\生成代码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Net.Code.Builder\Net.Code.Builder.csproj">
+      <Project>{4AFD3917-03EA-4A07-AB55-07E8D4D6A685}</Project>
+      <Name>Net.Code.Builder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

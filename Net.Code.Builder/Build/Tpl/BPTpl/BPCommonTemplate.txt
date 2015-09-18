@@ -1,0 +1,16 @@
+﻿/// <summary>
+/// {Memo}
+/// </summary>
+private {TypeString} {IsNull} _{Code} ;
+/// <summary>
+/// {Memo}
+/// </summary>
+public virtual {TypeString}{IsNull} {Code}
+{
+get{
+return _{Code};
+}
+set{
+ _{Code}= value;
+}
+}

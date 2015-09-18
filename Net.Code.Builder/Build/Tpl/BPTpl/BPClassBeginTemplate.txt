@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace {NameSpace}
+{
+    public partial class {Class} : NHExt.Runtime.Model.BizProxy
+    {
+		private string _guid ="{Guid}";
+		public override string Guid {
+			get{
+				return this._guid;
+			}
+		}
+		private string _proxyName = "{NameSpace}.{Class}";
+		public override string ProxyName{
+			get{
+				return this._proxyName;
+			}
+		}
+		private NHExt.Runtime.Session.CallerTypeEnum _callerType = NHExt.Runtime.Session.CallerTypeEnum.Reflect;
+
+        public override NHExt.Runtime.Session.CallerTypeEnum CallerType
+        {
+			get{
+				 return this._callerType;
+			}
+		}

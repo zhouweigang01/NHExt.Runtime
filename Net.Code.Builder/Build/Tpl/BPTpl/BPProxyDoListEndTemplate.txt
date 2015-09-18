@@ -1,0 +1,6 @@
+﻿	}
+	public List<{Return}> Do()
+	{
+		List<{Return}> obj = (List<{Return}>)this.DoProxy();
+		return obj;
+	}

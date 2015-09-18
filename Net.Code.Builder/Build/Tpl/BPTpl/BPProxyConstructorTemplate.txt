@@ -1,0 +1,7 @@
+﻿public {Class}Proxy()
+{
+	this.invoker.RemoteIP = this.RemoteIP;
+	this.invoker.DllName = "{NameSpace}.dll";
+    this.invoker.NS = "{NameSpace}";
+    this.invoker.ProxyName = "{Class}";
+}

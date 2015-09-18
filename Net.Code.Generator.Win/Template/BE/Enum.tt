@@ -1,0 +1,81 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="Net.Code.Builder.Base" #>
+<#@ import namespace="Net.Code.Builder.Build" #>
+<#@ import namespace="Net.Code.Builder.Build.Model" #>
+<#@ parameter type="Net.Code.Builder.Build.TemplateDTO.Enum" name="entity" #>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.Enums;
+using NHExt.Runtime.Model;
+
+namespace <#= entity.Namespace#>
+{
+	/// <summary>
+	/// <#= entity.Name#>
+	/// </summary>	
+	[Serializable]
+    public partial class <#= entity.Code#> : NHExt.Runtime.Model.BaseEnum
+	{
+		protected <#= entity.Code#>(int v, string code, string name)
+            : base(v, code, name, typeof(<#= entity.Type#>))
+        {
+        }
+        public <#= entity.Code#>()
+            : base(typeof(<#= entity.Type#>))
+        {
+
+        }
+		public static explicit operator <#= entity.Code#>(int value)
+        {
+            return  BaseEnum.GetEnum<<#= entity.Code#>>(value);
+        }
+
+        public static explicit operator int(<#= entity.Code#> obj)
+        {
+            return obj.EnumValue;
+        }
+
+		#region 实体查询相关函数
+		public static class Finder{
+			public static  <#= entity.Code#> FindByID(int enumId){
+				return   NHExt.Runtime.Model.BaseEnum.GetEnum<<#= entity.Code#>>(enumId);
+			}
+			public static  <#= entity.Code#> FindByCode(string enumCode){
+				return   NHExt.Runtime.Model.BaseEnum.GetEnum<<#= entity.Code#>>(enumCode);
+			}
+		}
+		#endregion 
+
+		<#  foreach(Net.Code.Builder.Build.TemplateDTO.EnumColumn col in entity.ColumnList)
+		{
+		#>
+			/// <summary>
+			/// <#= col.Name#>
+			/// </summary>
+			private static <#= entity.Code#> _<#= col.Code#>;
+			/// <summary>
+			/// <#= col.Name#>
+			/// </summary>
+			[NHExt.Runtime.EntityAttribute.EnumProperty]
+			public static <#= entity.Code#> <#= col.Code#>
+			{
+				get
+				{
+					if (_<#= col.Code#> == null)
+					{
+						_<#= col.Code#> = new <#= entity.Code#>(<#= col.Value#>, "<#= col.Code#>", "<#= col.Name#>");
+					}
+					return _<#= col.Code#>;
+				}
+			}
+
+		<#;
+		}
+		#>
+
+	}
+}

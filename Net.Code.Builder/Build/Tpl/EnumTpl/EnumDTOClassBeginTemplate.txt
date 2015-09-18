@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.Enums;
+using NHExt.Runtime.Model;
+
+namespace {NameSpace}
+{
+    public partial class {Class} : NHExt.Runtime.Model.BaseEnumDTO
+    {
+        protected {Class}(int v)
+            : base(v, "{NameSpace}.{Class}")
+        {
+        }
+        public {Class}()
+            : base("{NameSpace}.{Class}")
+        {
+
+        }
+		public static explicit operator {Class}(int value)
+        {
+            return  BaseEnumDTO.GetEnum<{Class}>(value);
+        }
+
+        public static explicit operator int({Class} obj)
+        {
+            return obj.EnumValue;
+        }
+        private static {Class} _empty;
+		[NHExt.Runtime.EntityAttribute.EnumProperty]
+        public static new {Class} Empty
+        {
+            get
+            {
+                if (_empty == null)
+                {
+                    _empty = new {Class}();
+                }
+                return _empty;
+            }
+        }

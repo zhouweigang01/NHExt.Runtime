@@ -1,0 +1,19 @@
+﻿internal {Return} Do()
+{
+    NHExt.Runtime.Proxy.ProxyContext ctx = new NHExt.Runtime.Proxy.ProxyContext();
+    ctx.ProxyGuid = this._guid;
+    return this.DoCommon(ctx);
+}
+
+internal void DoTask(bool autoRun = false)
+{
+	this._callerType = NHExt.Runtime.Session.CallerTypeEnum.Reflect;
+	NHExt.Runtime.Proxy.ProxyContext ctx = new NHExt.Runtime.Proxy.ProxyContext();
+    ctx.ProxyGuid = this._guid;
+	 NHExt.Runtime.Logger.LoggerHelper.Info("系统调度任务，使用线程调度服务");
+    NHExt.Runtime.Proxy.TaskThreadPool.ThreadPool.AddThreadItem((state) =>
+    {
+        NHExt.Runtime.Proxy.ProxyContext pCtx = state as NHExt.Runtime.Proxy.ProxyContext;
+		this.DoCommon(pCtx);
+    }, ctx , autoRun);
+}

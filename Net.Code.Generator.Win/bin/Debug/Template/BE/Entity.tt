@@ -1,0 +1,488 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="Net.Code.Builder.Base" #>
+<#@ import namespace="Net.Code.Builder.Build" #>
+<#@ import namespace="Net.Code.Builder.Build.Model" #>
+<#@ parameter type="Net.Code.Builder.Build.TemplateDTO.BEEntity" name="entity" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.EntityAttribute;
+using NHExt.Runtime.Model;
+using NHExt.Runtime.Session;
+namespace <#= entity.Namespace#>
+{
+	[Bussines(EntityName = "<#= entity.EntityName#>", Range = <#= entity.Range#>, OrgFilter = <#= entity.OrgFilter#>, Table = "<#= entity.Table#>")]
+	[Serializable]
+	public partial class <#= entity.Code#> :<#= entity.InhertClass#>
+	{
+		private EntityKey<<#= entity.Code#>> _key;
+		public new virtual EntityKey<<#= entity.Code#>> Key
+		{
+			get
+			{
+				return this.GetEntityKey<<#= entity.Code#>>(ref _key);
+			}
+		}
+		public static new string Guid = "<#= entity.Guid#>";
+		///是否多组织数据处理
+		public override NHExt.Runtime.Enums.ViewRangeEnum Range
+		{
+			get
+			{
+				return <#= entity.Range#>;
+			}
+		}
+		///数据是否按照根组织进行过滤
+		public override bool OrgFilter
+		{
+			get
+			{
+				return <#= entity.OrgFilter#>;
+			}
+		}
+
+		/// <summary>
+		/// 生成实体默认创建代码
+		/// </summary>
+		public static new <#= entity.Code#> Create()
+		{
+			return Create(true);
+		}
+		private static <#= entity.Code#> Create(bool inList)
+		{
+			<#= entity.Code#> entity = new <#= entity.Code#>();
+			entity.ID = NHExt.Runtime.Util.EntityGuidHelper.New();
+			entity.EntityState = NHExt.Runtime.Enums.EntityState.Add;
+			if (inList)
+			{
+				if (Session.Current != null)
+				{
+					Session.Current.InList(entity);
+				}
+			}
+			return entity;
+		}
+		<# if(!string.IsNullOrEmpty(entity.PEntityCol)){#>
+			///根据聚合实体的主实体创建主实体的子实体
+			public static <#= entity.Code#> Create(<#= entity.PEntityType#> primaryEntity)
+			{
+				<#= entity.Code#> entity = Create(false);
+				entity.<#= entity.PEntityCol#> = primaryEntity;
+				return entity;
+			}
+		<#;
+		}
+		#>
+		/// <summary>
+		/// 实体私有数据，记录上次提交缓存之前的数据，只有在实体内部可用
+		/// </summary>
+		public new virtual <#= entity.Code#> OrignalData
+		{
+			get
+			{
+				if (this._orignalData == null)
+				{
+					this.InitOrignalData();
+				}
+				return this._orignalData as <#= entity.Code#>;
+			}
+		}
+		public override void InitOrignalData()
+		{
+			base.InitOrignalData();
+		}
+		#region 实体查询相关函数
+		public new static class Finder
+		{
+			public static List<<#= entity.Code#>> FindAll(string hql, List<object> paramList = null, int startIndex = -1, int recordCount = -1)
+			{
+				return NHExt.Runtime.Query.EntityFinder.FindAll<<#= entity.Code#>>(hql, paramList, startIndex, recordCount);
+			}
+			public static <#= entity.Code#> Find(string hql, List<object> paramList = null, int startIndex = -1)
+			{
+				return NHExt.Runtime.Query.EntityFinder.Find<<#= entity.Code#>>(hql, paramList, startIndex);
+			}
+			public static <#= entity.Code#> FindById(long id)
+			{
+				return NHExt.Runtime.Query.EntityFinder.FindById<<#= entity.Code#>>(id);
+			}
+		}
+		#endregion
+		#region CRUD相关操作
+		protected override void SetDefaultValue()
+		{
+			this.OnSetDefaultValue();
+			base.SetDefaultValue();
+		}
+		protected override void Validate()
+		{
+			this.OnValidate();
+			base.Validate();
+		}
+		protected override void Inserting()
+		{
+			this.OnInserting();
+			base.Inserting();
+		}
+		protected override void Inserted()
+		{
+			this.OnInserted();
+			base.Inserted();
+		}
+		protected override void Updating()
+		{
+			this.OnUpdating();
+			base.Updating();
+		}
+		protected override void Updated()
+		{
+			this.OnUpdated();
+			base.Updated();
+		}
+		protected override void Deleting()
+		{
+			this.OnDeleting();
+			base.Deleting();
+		}
+		protected override void Deleted()
+		{
+			this.OnDeleted();
+			base.Deleted();
+		}
+
+		#endregion
+
+		public <#= entity.Code#>()
+			: base()
+		{
+			this._entityName = "<#= entity.EntityName#>";
+		}
+ 
+		#region 属性字段
+		<#  foreach(Net.Code.Builder.Build.TemplateDTO.BEColumn col in entity.ColumnList)
+		{
+		#>
+			<#if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Common"){#>
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>, IsBizKey = <#= col.IsBizKey#>, IsNull = <#= col.IsNull#>)]
+				public virtual <#= col.Type#><#= col.NullMark#> <#= col.Code#>
+				{
+					get
+					{
+						return this.GetValue<<#= col.Type#><#= col.NullMark#>>("<#= col.Code#>");
+					}
+					set
+					{
+						this.SetValue<<#= col.Type#><#= col.NullMark#>>("<#= col.Code#>", value);
+					}
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Enum"){ 
+			#>  
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>, IsBizKey = <#= col.IsBizKey#>, IsNull = <#= col.IsNull#>)]
+				[NHExt.Runtime.EntityAttribute.Refrence(RefType = <#= col.RefType#>, TargetEntity = "<#= col.Target#>")]
+				public virtual <#= col.Type#> <#= col.Code#>
+				{
+					get
+					{
+						return this.GetEnum<<#= col.Type#>>("<#= col.Code#>");
+					}
+					set
+					{
+						this.SetEnum<<#= col.Type#>>("<#= col.Code#>", value);
+					}
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Entity"){ 
+			#>
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>, IsBizKey = <#= col.IsBizKey#>, IsNull = <#= col.IsNull#>)]
+				[NHExt.Runtime.EntityAttribute.Refrence(RefType = <#= col.RefType#>, TargetEntity = "<#= col.Target#>")]
+				public virtual <#= col.Type#> <#= col.Code#>
+				{
+					get
+					{
+						return this.GetRefrence<<#= col.Type#>>("<#= col.Code#>");
+					}
+					set
+					{
+						this.SetRefrence<<#= col.Type#>>("<#= col.Code#>", value);
+					}
+				}
+				/// <summary>
+				/// <#= col.Name#>Key
+				/// </summary>
+				public virtual EntityKey<<#= col.Type#>> <#= col.Code#>Key
+				{
+					get
+					{
+						return this.GetRefrenceKey<<#= col.Type#>>("<#= col.Code#>");
+					}
+					set
+					{
+						this.SetRefrenceKey<<#= col.Type#>>("<#= col.Code#>", value);
+					}
+				}
+			<#;
+			}else  if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.PEntity"){ 
+			#>
+				/// <summary>
+				/// <#= col.Name#>
+				/// </summary>
+				[NHExt.Runtime.EntityAttribute.ColumnDescription(Code = "<#= col.Code#>", Description = "<#= col.Name#>", EntityRefrence = <#= col.EntityRefrence#>, IsViewer = <#= col.IsViewer#>, IsBizKey = <#= col.IsBizKey#>, IsNull = <#= col.IsNull#>)]
+				[NHExt.Runtime.EntityAttribute.Refrence(RefType = <#= col.RefType#>, TargetEntity = "<#= col.Target#>")]
+				public virtual <#= col.Type#> <#= col.Code#>
+				{
+					get
+					{
+						return this.GetRefrence<<#= col.Type#>>("<#= col.Code#>");
+					}
+					set
+					{
+						this.SetRefrence<<#= col.Type#>>("<#= col.Code#>", value);
+					}
+				}
+				/// <summary>
+				/// <#= col.Name#>Key
+				/// </summary>
+				public virtual EntityKey<<#= col.Type#>> <#= col.Code#>Key
+				{
+					get
+					{
+						return this.GetRefrenceKey<<#= col.Type#>>("<#= col.Code#>");
+					}
+					set
+					{
+						this.SetRefrenceKey<<#= col.Type#>>("<#= col.Code#>", value);
+					}
+				}
+			<#;
+			}else  if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Composition"){ 
+			#>
+				/// <summary>
+				/// <#= col.Name#>Key
+				/// </summary>
+				public virtual IList<<#= col.Type#>> <#= col.Code#>
+				{
+					get
+					{
+						return this.GetComposition<<#= col.Type#>>("<#= col.Code#>");
+					}
+					set
+					{
+						this.SetComposition<<#= col.Type#>>("<#= col.Code#>", value);
+					}
+				}
+
+			<#;
+			}
+			#> 
+
+		<#;
+		}
+		#> 
+		#endregion
+		#region 实体克隆
+		public override NHExt.Runtime.Model.BaseEntity Clone()
+		{
+			<#= entity.Code#> cloneObj = new <#= entity.Code#>();
+			this.Clone(cloneObj);
+			return cloneObj;
+		}
+
+		public virtual void Clone(<#= entity.Code#> cloneObj)
+		{
+			base.Clone(cloneObj);
+		<#  foreach(Net.Code.Builder.Build.TemplateDTO.BEColumn col in entity.ColumnList)
+		{
+		#>
+			<#if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Common"){#>
+				cloneObj.<#= col.Code#> = this.<#= col.Code#>;
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Enum"){ 
+			#>  
+				if (this.<#= col.Code#> != null)
+				{
+					cloneObj.<#= col.Code#> = new <#= col.Type#>();
+					cloneObj.<#= col.Code#>.EnumValue = this.<#= col.Code#>.EnumValue;
+					cloneObj.<#= col.Code#>.Code = this.<#= col.Code#>.Code;
+					cloneObj.<#= col.Code#>.Name = this.<#= col.Code#>.Name;
+				}
+				else
+				{
+					cloneObj.<#= col.Code#> = null;
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Entity"){ 
+			#>
+				if (this.<#= col.Code#> != null)
+				{
+					cloneObj.<#= col.Code#> = new <#= col.Type#>();
+					cloneObj.<#= col.Code#>.ID = this.<#= col.Code#>.ID;
+				}
+				else
+				{
+					cloneObj.<#= col.Code#> = null;
+				}
+			<#;
+			}else  if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.PEntity"){ 
+			#>
+				if (this.<#= col.Code#> != null)
+				{
+					cloneObj.<#= col.Code#> = new <#= col.Type#>();
+					cloneObj.<#= col.Code#>.ID = this.<#= col.Code#>.ID;
+				}
+				else
+				{
+					cloneObj.<#= col.Code#> = null;
+				} 
+			<#;
+			} 
+			#> 
+		<#;
+		}
+		#>   
+		}
+		#endregion
+		#region 实体和DTO互转	
+		public new virtual <#= entity.Namespace#>.Deploy.<#= entity.Code#>DTO ToDTO()
+		{
+			<#= entity.Namespace#>.Deploy.<#= entity.Code#>DTO dto = new <#= entity.Namespace#>.Deploy.<#= entity.Code#>DTO();
+			this.ToDTO(dto);
+			return dto;
+		}
+
+		protected virtual void ToDTO(<#= entity.Namespace#>.Deploy.<#= entity.Code#>DTO dto)
+		{
+			base.ToDTO(dto);
+		<#  foreach(Net.Code.Builder.Build.TemplateDTO.BEColumn col in entity.ColumnList)
+		{
+		#>
+			<#if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Common"){#>
+				dto.<#= col.Code#> = this.<#= col.Code#>;
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Enum"){ 
+			#>  
+				if (this.<#= col.Code#> != null)
+				{
+					dto.<#= col.Code#> = this.<#= col.Code#>.EnumValue;
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Entity"){ 
+			#>
+				if (this.<#= col.Code#> != null)
+				{
+					dto.<#= col.Code#> = this.<#= col.Code#>.ID;
+				}
+			<#;
+			}else  if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.PEntity"){ 
+			#>
+				if (this.<#= col.Code#> != null)
+				{
+					dto.<#= col.Code#> = this.<#= col.Code#>.ID;
+				}
+			<#;
+			}else  if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Composition"){ 
+			#>
+				dto.<#= col.Code#>.Clear();
+				foreach (<#= col.Type#> ce in this.<#= col.Code#>)
+				{
+					dto.<#= col.Code#>.Add(ce.ToDTO());
+				}
+			<#;
+			} 
+			#> 
+		<#;
+		} 
+		#> 
+			this.ToDTOImpl(dto);
+		}
+
+
+		public virtual void FromDTO(<#= entity.Namespace#>.Deploy.<#= entity.Code#>DTO dto)
+		{
+			this.FromDTO(dto, this);
+		}
+		protected virtual void FromDTO(<#= entity.Namespace#>.Deploy.<#= entity.Code#>DTO dto, <#= entity.EntityName#> entity)
+		{
+			base.FromDTO(dto, entity);
+
+		<#  foreach(Net.Code.Builder.Build.TemplateDTO.BEColumn col in entity.ColumnList)
+		{
+		#>
+			<#if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Common"){#>
+				entity.<#= col.Code#> = dto.<#= col.Code#>;
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Enum"){ 
+			#>  
+				if (dto.<#= col.Code#> > 0)
+				{
+					entity.<#= col.Code#> = (<#= col.Type#>)dto.<#= col.Code#>;
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Entity"){ 
+			#>
+				if (this.<#= col.Code#> != null)
+				{
+					dto.<#= col.Code#> = this.<#= col.Code#>.ID;
+				}
+			<#;
+			}else if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.PEntity"){ 
+			#>
+				if (this.<#= col.Code#> != null)
+				{
+					dto.<#= col.Code#> = this.<#= col.Code#>.ID;
+				}
+			<#;
+			}else  if(col.RefType =="NHExt.Runtime.Enums.RefrenceTypeEnum.Composition"){ 
+			#>
+				if (dto.<#= col.Code#>.Count > 0)
+				{
+					foreach (<#= col.DTOType#> childDTO in dto.<#= col.Code#>)
+					{
+						<#= col.Type#> subEntity = null;
+						foreach (<#= col.Type#> tmpChild in entity.<#= col.Code#>)
+						{
+							if (tmpChild.ID == childDTO.ID)
+							{
+								subEntity = tmpChild;
+								break;
+							}
+						}
+						if (subEntity == null || entity.EntityState == NHExt.Runtime.Enums.EntityState.Add)
+						{
+							subEntity = <#= col.Type#>.Create(entity);
+							entity.<#= col.Code#>.Add(subEntity);
+						}
+						subEntity.FromDTO(childDTO);
+						if (subEntity.EntityState == NHExt.Runtime.Enums.EntityState.Add || subEntity.EntityState == NHExt.Runtime.Enums.EntityState.Update)
+						{
+							NHExt.Runtime.Session.Session.Current.InList(entity);
+						}
+					}
+				}
+			<#;
+			} 
+			#> 
+		<#;
+		} 
+		#> 
+			this.FromDTOImpl(dto);
+		}
+		public override NHExt.Runtime.Model.BaseDTO ToBaseDTO()
+		{
+			return this.ToDTO();
+		}	
+		#endregion
+
+	 }
+}

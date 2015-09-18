@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace {NameSpace}
+{
+    public partial class {Class}Proxy : NHExt.Runtime.Model.BizAgent
+    {
+		private string _guid ="{Guid}";
+		public override string Guid {
+			get{
+				return _guid;
+			}
+		}
+		private string _proxyName = "{NameSpace}.{Class}Proxy";
+		public override string ProxyName{
+			get{
+				return this._proxyName;
+			}
+		}

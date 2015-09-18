@@ -1,0 +1,6 @@
+﻿	}
+	public {Return} Do()
+	{
+		 {Return} obj = ( {Return})this.DoProxy();
+		 return obj;
+	}

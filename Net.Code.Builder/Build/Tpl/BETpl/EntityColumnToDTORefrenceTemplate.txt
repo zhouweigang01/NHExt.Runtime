@@ -1,0 +1,4 @@
+﻿		if (this.{Code}Key != null)
+		{
+			dto.{Code} = this.{Code}Key.ID;
+		}

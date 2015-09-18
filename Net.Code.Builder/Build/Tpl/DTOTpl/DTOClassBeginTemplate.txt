@@ -1,0 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NHExt.Runtime.Model;
+namespace {NameSpace}{
+ [Serializable]
+public partial class {Class} : {InhertClass}
+{

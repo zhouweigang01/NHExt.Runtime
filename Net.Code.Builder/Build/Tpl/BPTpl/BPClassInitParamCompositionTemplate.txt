@@ -1,0 +1,11 @@
+﻿if(this.CallerType == NHExt.Runtime.Session.CallerTypeEnum.WCF){
+	this._{Code} = NHExt.Runtime.Serialize.XmlSerialize.DeSerialize<List<{TypeString} {IsNull}>>(ctx.ParamList[{Index}].ToString());
+	ctx.ParamList[{Index}] = this._{Code};
+}
+else{
+	if(ctx.ParamList.Count > {Index}){
+		this._{Code} = (List<{TypeString} {IsNull}>)ctx.ParamList[{Index}];
+	 }else{
+		ctx.ParamList.Add(this._{Code});
+	}
+}

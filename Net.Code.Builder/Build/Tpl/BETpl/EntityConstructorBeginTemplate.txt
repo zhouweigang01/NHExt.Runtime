@@ -1,0 +1,4 @@
+
+public {Class}():base()
+ {
+  this._entityName = "{EntityName}";

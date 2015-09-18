@@ -1,0 +1,2 @@
+﻿private {ProxyReturn} TypeConvert({Return} obj)
+{
